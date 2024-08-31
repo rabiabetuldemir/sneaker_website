@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopping</title>
+    <link rel="stylesheet" href="sneakers.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="genel">
+        <div class="urun0 modal1 font" id="modal1">
+            <a href="#"><img id="close-modal1" src="images/icon-close.svg" alt=""></a> Cart <br><br><hr>
+            <p style="text-align: center;margin-top: 90px;color: rgb(70, 74, 78);">Your cart is empty.</p>
+        </div>
+        <div class="urun1 modal2 font" id="modal2">
+            <a href="#"><img id="close-modal2"  src="images/icon-close.svg" alt=""></a> Cart <br><br><hr>
+            <img  style="width: 55px; border-radius: 10px; margin-top:30px;margin-left: 10px;" src="images/image-product-1-thumbnail.jpg" alt="">
+
+            <p style="color: rgb(70, 74, 78);margin-left: 100px;margin-top: -60px;"> Fall Limited Edition Sneakers</p>
+            <p style="margin-left: 100px;" id="cart-item-price">Price: $125.00</p>
+            <a id="icon-delete" style="margin-left: 300px;" href="#"> <img src="images/icon-delete.svg" alt=""></a>
+
+            <p style="margin-left: 100px;margin-top: -25px;" id="cart-item-total">Total: $0.00</p>
+            <a style="margin-left: 150px; text-decoration: none;background-color: orange;color: black;border: 5px solid orange;border-radius: 5px;" href="#">CHECK OUT</a>
+        </div>
+        
+    <div class="ust">
+        <div class="baslik"> <img src="images/logo.svg" alt=""> </div>
+        <div class="menu1">
+            <a href="#">Collections</a>
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        
+        <div class="menu2">
+          <a href="#">  <img id="avatar" src="images/image-avatar.png" alt=""></a> 
+          <a href="#" "> <img id="open-cart" src="images/icon-cart.svg" alt=""></a> 
+
+        </div>
+        <br><br><br>
+        
+        <hr>
+    </div>
+
+    <div class="altkutu">
+
+    <div class="altresimler"> <img class="photobig" src="images/image-product-2.jpg" alt="">
+    <div class="minik">
+         <a href="sneakers.html"><img class="k1" src="images/image-product-1-thumbnail.jpg" alt=""></a> 
+        <a href="sneakers2.html" ><img class="k1" src="images/image-product-2-thumbnail.jpg" alt=""></a> 
+        <a href="sneakers3.html"><img class="k1" src="images/image-product-3-thumbnail.jpg" alt=""></a> 
+        <a href="sneakers4.html"> <img class="k1" src="images/image-product-4-thumbnail.jpg" alt=""></a> 
+    </div>
+    </div>
+    </div>
+    <div class="yankutu font">
+       <div class="metin">
+        <p id="p" style="font-size: 15px; letter-spacing: 1px;  font-weight:  bold;  color: hsl(219, 9%, 45%);">SNEAKER COMPANY</p>
+        <h2 style="font-size: 40px; letter-spacing: 1px;   color: hsl(214, 15%, 21%);">Fall Limited Edition Sneakers</h2>
+        <p style="font-size: 18px; letter-spacing: 1px;   color: hsl(217, 15%, 27%);">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+        <h2 style="font-size: 30px; letter-spacing: 1px;   color: hsl(0, 0%, 0%);">$125.00</h2>
+        <section> 50%</section>
+        <p style="font-size: 15px; letter-spacing: 1px;font-weight:  bold ;text-decoration: line-through; color: hsl(0, 6%, 25%);">$250.00</p>
+       </div>
+
+       <div class="butonlar">
+       <button id="button4" class="btn" style="color: orange;" type="button">-</button>
+       <span id="counter" class="btn" style="background-color: rgb(224, 220, 220);;" >0</span>
+       <button id="button6" class="btn" style="color: orange;" type="button">+</button>
+       </div>
+       <div class="addtocart font">
+        <button  id="add-to-cart" style="background-color: orange;width: 260px;height: 55px;border-radius: 10px;border: 1px solid gray;font-weight: bold; font-size: 18px;" type="button"><img src="images/icon-cart.svg" alt=""> Add to Cart</button>
+
+       </div>
+
+
+    </div>
+    <div class="bosluk1">
+   
+    </div>
+    <div class="bosluk2"></div>
+        </div>
+    
+
+</div>
+
+
+
+
+<script>
+        const openCartButton = document.getElementById('open-cart');
+        const modal1 = document.getElementById('modal1');
+        const closeModal1 = document.getElementById('close-modal1');
+        const modal2 = document.getElementById('modal2');
+        const closeModal2 = document.getElementById('close-modal2');
+        let count = 0;
+        
+        
+        openCartButton.addEventListener('click', () => {
+        if (modal1.style.display === 'block' || modal2.style.display === 'block') {
+        modal1.style.display = 'none';
+        modal2.style.display = 'none';
+        } else {
+        if (count == 0) {
+            modal1.style.display = 'block'; 
+            modal2.style.display = 'none';
+        } else {
+            modal1.style.display = 'none';
+            modal2.style.display = 'block'; 
+        }
+        }
+});
+    
+
+
+
+
+closeModal1.addEventListener('click', () => {
+    modal1.style.display = 'none';
+    modal2.style.display = 'none';
+});
+
+
+closeModal2.addEventListener('click', () => {
+    modal2.style.display = 'none';
+    modal1.style.display = 'none'; 
+});
+       
+  
+    const resimler = document.querySelectorAll('.k1');
+    resimler.forEach(resim => {
+    resim.addEventListener('mouseover', () => {resim.classList.add('bugulu');});
+    resim.addEventListener('mouseout', () => {resim.classList.remove('bugulu');});
+});
+
+
+
+    
+
+    const button4 = document.getElementById('button4');
+    const button6 = document.getElementById('button6');
+    const counter = document.getElementById('counter');
+    const cartItemTotal = document.getElementById('cart-item-total');
+    const productPrice = 125.00; // Ürün fiyatı
+    const deleteButton = document.getElementById('icon-delete');
+
+    
+
+        document.getElementById('button4').addEventListener('click', () => {
+            if (count > 0) { 
+                count -= 1;
+                counter.textContent = count; 
+                modal2.style.display = 'block';
+            }
+        });
+        
+        document.getElementById('icon-delete').addEventListener('click', () => {
+            if (count > 0) { 
+                modal1.style.display='block';
+                
+            }
+            else{
+                modal1.style.display='block';
+
+            }
+        });
+
+       
+        document.getElementById('button6').addEventListener('click', () => {
+            count += 1;
+            counter.textContent = count; 
+           modal2.style.display = 'block' ;
+            
+        });
+
+       
+        document.getElementById('add-to-cart').addEventListener('click', () => {
+    if (count > 0) {
+        let totalInCart = 0;
+        if (cartItemTotal.textContent.includes('Items')) {
+            totalInCart = parseInt(cartItemTotal.textContent.split(' ')[1]); 
+        }
+        const newTotal = totalInCart + count; 
+        cartItemTotal.textContent = `Total: ${newTotal} Items = $${(newTotal * productPrice).toFixed(2)}`;
+        modal2.style.display = 'block';
+        modal1.style.display = 'none';
+        count = 0;
+        counter.textContent = count; 
+    } else {
+        modal1.style.display = 'block';
+        modal2.style.display = 'none';
+    }
+});
+     deleteButton.addEventListener('click', (event) => {
+     event.preventDefault(); 
+     modal1.style.display = 'block'; 
+     modal2.style.display = 'none';  
+     count = 0; 
+     counter.textContent = count; 
+     cartItemTotal.textContent = 'Total: 0 Items = $0.00'; 
+    });
+
+
+</script>
+</body>
+</html>
